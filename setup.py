@@ -24,7 +24,7 @@ def runSetup():
     """
     setup(
         name='toil',
-        version='1.2.3.4.pasteur',
+        version=version.distVersion,
         description='Pipeline management software for clusters.',
         author='Benedict Paten',
         author_email='benedict@soe.usc.edu',
@@ -116,5 +116,5 @@ def importVersion():
     return imp.load_source('toil.version', 'src/toil/version.py')
 
 
-# version = importVersion()
+version = importVersion()
 runSetup()
