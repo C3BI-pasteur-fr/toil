@@ -24,7 +24,7 @@ def runSetup():
     """
     setup(
         name='toil',
-        version=version.distVersion,
+        version='1.2.3.4.pasteur',
         description='Pipeline management software for clusters.',
         author='Benedict Paten',
         author_email='benedict@soe.usc.edu',
@@ -55,9 +55,9 @@ def runSetup():
                 'gcs_oauth2_boto_plugin==1.14',
                 botoRequirement],
             'cwl': [
-                'cwltool==1.0.20180108222053',
+                'cwltool>=1.0.20180108222053',
                 'schema-salad >= 2.6, < 3',
-                'galaxy-lib==17.9.3',
+                'galaxy-lib>=17.9.3',
                 'cwltest>=1.0.20170214185319']},
         package_dir={'': 'src'},
         packages=find_packages(where='src',
@@ -116,5 +116,5 @@ def importVersion():
     return imp.load_source('toil.version', 'src/toil/version.py')
 
 
-version = importVersion()
+# version = importVersion()
 runSetup()
